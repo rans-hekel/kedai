@@ -39,3 +39,29 @@ document.addEventListener("click", function (e) {
     searchForm.classList.remove("active");
   }
 });
+
+// modal box
+
+const itemDetailmodal = document.querySelector("#item-detail-modal");
+const itemDetailButtons = document.querySelectorAll(".item-detail-button");
+
+itemDetailButtons.forEach((btn) => {
+  btn.onclick = (e) => {
+    itemDetailmodal.style.display = "flex";
+    e.preventDefault();
+  };
+});
+
+// Klik tombol close
+document.querySelector(".modal .close-icon").onclick = (e) => {
+  itemDetailmodal.style.display = "none";
+  e.preventDefault();
+};
+
+// klik diluar modal
+window.onclick = (e) => {
+  if (e.target == itemDetailmodal) {
+    itemDetailmodal.style.display = "none";
+    e.preventDefault();
+  }
+};
