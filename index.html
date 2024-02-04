@@ -17,6 +17,10 @@
 
     <!-- alpinejs -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- javascript saya -->
+    <script src="src/app.js"></script>
+
   </head>
   <!-- navbar start -->
   <nav class="navbar">
@@ -164,72 +168,34 @@
   <!-- Menu Sectuion Ennd -->
 
 <!-- produk section start -->
-<section class="products" id="products">
+<section class="products" id="products" x-data="products">
   <h2><span> Produk unggulan </span> kami</h2>
   <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus ad officia, assumenda quam cumque tenetur!</p>
 
   <div class="row">
-    <div class="product-card">
-      <div class="products-icons">
-        <a href="#"><i data-feather="shopping-cart"></i></a>
-        <a href="#" class="item-detail-button"><i data-feather="eye"></i></a>
-      </div>
-      <div class="product-image">
-        <img src="img/product1.jpg" alt="Product 1">
-      </div>
-      <div class="product-content">
-        <h3>Coffee Beans 1</h3>
-        <div class="product-stars">
-          <i data-feather="star" class="star-full"></i>
-          <i data-feather="star" class="star-full"></i>
-          <i data-feather="star" class="star-full"></i>
-          <i data-feather="star" class="star-full"></i>
-          <i data-feather="star"></i>
+    <template x-for="(item, index) in items" x-key="index">
+      <div class="product-card">
+        <div class="products-icons">
+          <a href="#"><i data-feather="shopping-cart"></i></a>
+          <a href="#" class="item-detail-button"><i data-feather="eye"></i></a>
         </div>
-        <div class="product-price">IDR 30K <span>IDR 55K</span></div>
+        <div class="product-image">
+          <img src="img/product1.jpg" alt="Product 1">
+        </div>
+        <div class="product-content">
+          <h3>Coffee Beans 1</h3>
+          <div class="product-stars">
+            <i data-feather="star" class="star-full"></i>
+            <i data-feather="star" class="star-full"></i>
+            <i data-feather="star" class="star-full"></i>
+            <i data-feather="star" class="star-full"></i>
+            <i data-feather="star"></i>
+          </div>
+          <div class="product-price">IDR 30K <span>IDR 55K</span></div>
+        </div>
       </div>
-    </div>
+    </template>
     <!-- pemisah -->
-    <div class="product-card">
-      <div class="products-icons">
-        <a href="#"><i data-feather="shopping-cart"></i></a>
-        <a href="#" class="item-detail-button"><i data-feather="eye"></i></a>
-      </div>
-      <div class="product-image">
-        <img src="img/product1.jpg" alt="Product 1">
-      </div>
-      <div class="product-content">
-        <h3>Coffee Beans 1</h3>
-        <div class="product-stars">
-          <i data-feather="star"></i>
-          <i data-feather="star"></i>
-          <i data-feather="star"></i>
-          <i data-feather="star"></i>
-          <i data-feather="star"></i>
-        </div>
-        <div class="product-price">IDR 30K <span>IDR 55K</span></div>
-      </div>
-    </div>
-    <div class="product-card">
-      <div class="products-icons">
-        <a href="#"><i data-feather="shopping-cart"></i></a>
-        <a href="#" class="item-detail-button"><i data-feather="eye"></i></a>
-      </div>
-      <div class="product-image">
-        <img src="img/product1.jpg" alt="Product 1">
-      </div>
-      <div class="product-content">
-        <h3>Coffee Beans 1</h3>
-        <div class="product-stars">
-          <i data-feather="star"></i>
-          <i data-feather="star"></i>
-          <i data-feather="star"></i>
-          <i data-feather="star"></i>
-          <i data-feather="star"></i>
-        </div>
-        <div class="product-price">IDR 30K <span>IDR 55K</span></div>
-      </div>
-    </div>
   </div>
 
 
