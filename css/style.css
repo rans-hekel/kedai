@@ -394,11 +394,7 @@ body {
   font-weight: bold;
 }
 
-.products .product-price span {
-  text-decoration: line-through;
-  font-weight: lighter;
-  font-size: 1rem;
-}
+
 
 
 /* Contact Section */

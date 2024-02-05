@@ -5,11 +5,11 @@ document.addEventListener("alpine:init", () => {
         id: 1,
         name: "Robusta Brazil",
         img: "product1.jpg",
-        price: 20000,
+        price: 200000,
       },
       {
         id: 2,
-        name: "Ameriacno",
+        name: "Americano",
         img: "product2.jpg",
         price: 40000,
       },
@@ -23,8 +23,17 @@ document.addEventListener("alpine:init", () => {
         id: 4,
         name: "Robusta Zimbabwe",
         img: "product4.jpg",
-        price: 10000,
+        price: 100000,
       },
     ],
   }));
 });
+
+// convert to rp
+const rupiah = (number) => {
+  return new Intl.NumberFormat("id-ID", {
+    style: "currency",
+    currency: "IDR",
+    minimumFractionDigits: 0,
+  }).format(number);
+};

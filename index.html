@@ -176,22 +176,42 @@
     <template x-for="(item, index) in items" x-key="index">
       <div class="product-card">
         <div class="products-icons">
-          <a href="#"><i data-feather="shopping-cart"></i></a>
-          <a href="#" class="item-detail-button"><i data-feather="eye"></i></a>
+          <a href="#">
+            <svg
+            width="24"
+            height="24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round">
+            <use href="img/feather-sprite.svg#shopping-cart" />
+            </svg>
+          </a>
+          <a href="#" class="item-detail-button">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <use href="img/feather-sprite.svg#eye" />
+            </svg>
+          </a>
         </div>
         <div class="product-image">
-          <img :src="`img/${item.img}`" alt="Product 1">
+          <img :src="`img/${item.img}`" :alt="item.name">
         </div>
         <div class="product-content">
-          <h3>Coffee Beans 1</h3>
+          <h3 x-text="item.name"></h3>
           <div class="product-stars">
-            <i data-feather="star" class="star-full"></i>
-            <i data-feather="star" class="star-full"></i>
-            <i data-feather="star" class="star-full"></i>
-            <i data-feather="star" class="star-full"></i>
-            <i data-feather="star"></i>
+            <svg
+            width="24"
+            height="24"
+            fill="currentColor"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round">
+            <use href="img/feather-sprite.svg#star" />
+            </svg>
           </div>
-          <div class="product-price">IDR 30K <span>IDR 55K</span></div>
+          <div class="product-price"><span x-text="rupiah(item.price)"></span></div>
         </div>
       </div>
     </template>
