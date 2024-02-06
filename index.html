@@ -23,7 +23,7 @@
 
   </head>
   <!-- navbar start -->
-  <nav class="navbar">
+  <nav class="navbar" x-data>
     <a href="#" class="navbar-logo">Warma<span>Buds</span>.</a>
     <div class="navbar-nav">
         <a href="#home">Home</a>
@@ -34,7 +34,10 @@
     </div>
     <div class="navbar-extra">
         <a href="#" id="search-button"><i data-feather="search"></i></a>
-        <a href="#" id="shopping-cart-button"><i data-feather="shopping-cart"></i></a>
+        <a href="#" id="shopping-cart-button"><i data-feather="shopping-cart">
+        </i>
+         <span class="quantity-badge" x-show="$store.cart.quantity" x-text="$store.cart.quantity"></span> 
+      </a>
         <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
     </div>
     <!-- search form start -->
@@ -176,12 +179,12 @@
     <template x-for="(item, index) in items" x-key="index">
       <div class="product-card">
         <div class="products-icons">
-          <a href="#">
+          <a href="#" @click.prevent="$store.cart.add(item)">
             <svg
             width="24"
             height="24"
             fill="none"
-            stroke="currentColor"
+            stroke="#fff"
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round">
@@ -200,6 +203,46 @@
         <div class="product-content">
           <h3 x-text="item.name"></h3>
           <div class="product-stars">
+            <svg
+            width="24"
+            height="24"
+            fill="currentColor"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round">
+            <use href="img/feather-sprite.svg#star" />
+            </svg>
+            <svg
+            width="24"
+            height="24"
+            fill="currentColor"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round">
+            <use href="img/feather-sprite.svg#star" />
+            </svg>
+            <svg
+            width="24"
+            height="24"
+            fill="currentColor"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round">
+            <use href="img/feather-sprite.svg#star" />
+            </svg>
+            <svg
+            width="24"
+            height="24"
+            fill="currentColor"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round">
+            <use href="img/feather-sprite.svg#star" />
+            </svg>
             <svg
             width="24"
             height="24"

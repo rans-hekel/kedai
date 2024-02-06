@@ -27,6 +27,17 @@ document.addEventListener("alpine:init", () => {
       },
     ],
   }));
+  Alpine.store("cart", {
+    items: [],
+    total: 0,
+    quantity: 0,
+    add(newItem) {
+      this.items.push(newItem);
+      this.total += newItem.price;
+      this.quantity++;
+      console.log(this.items, this.total, this.quantity);
+    },
+  });
 });
 
 // convert to rp
