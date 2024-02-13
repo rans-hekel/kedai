@@ -56,9 +56,9 @@
             <h3 x-text="item.name"></h3>
             <div class="item-price">
               <span x-text="rupiah(item.price)"> </span>&times;
-              <button id="remove">&minus;</button>
+              <button id="remove" @click="$store.cart.remove(item)">&minus;</button>
               <span x-text="item.quantity"></span>
-              <button id="add">&plus;</button> &equals;
+              <button id="add" @click="$store.cart.add(item)">&plus;</button> &equals;
               <span x-text="rupiah(item.total)"></span>
             </div>
           </div>

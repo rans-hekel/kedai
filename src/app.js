@@ -57,6 +57,20 @@ document.addEventListener("alpine:init", () => {
         });
       }
     },
+    remove(item) {
+      const cartItem = this.items.find((cartItem) => cartItem.id === item.id);
+
+      if (cartItem.quantity > 1) {
+        cartItem.quantity--;
+        cartItem.total -= cartItem.price;
+        this.total -= cartItem.price;
+        this.quantity--;
+      } else {
+        this.items = this.items.filter((cartItem) => cartItem.id !== item.id);
+        this.total -= cartItem.total;
+        this.quantity--;
+      }
+    },
   });
 });
 
