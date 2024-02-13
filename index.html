@@ -49,30 +49,21 @@
 
     <!-- shopping cart start -->
     <div class="shopping-cart">
-      <div class="cart-item">
-        <img src="img/product1.jpg" alt="product1">
-        <div class="item-detail">
-          <h3>Product 1</h3>
-          <div class="item-price">IDR 30K</div>
+      <template x-for="(item, index) in $store.cart.items" x-key="index">
+        <div class="cart-item">
+          <img :src="`img/${item.img}`" :alt="item.name">
+          <div class="item-detail">
+            <h3 x-text="item.name"></h3>
+            <div class="item-price">
+              <span x-text="rupiah(item.price)"> </span>&times;
+              <button id="remove">&minus;</button>
+              <span x-text="item.quantity"></span>
+              <button id="add">&plus;</button> &equals;
+              <span x-text="rupiah(item.total)"></span>
+            </div>
+          </div>
         </div>
-        <i data-feather="trash-2" class="remove-item"></i>
-      </div>
-      <div class="cart-item">
-        <img src="img/product1.jpg" alt="product1">
-        <div class="item-detail">
-          <h3>Product 1</h3>
-          <div class="item-price">IDR 30K</div>
-        </div>
-        <i data-feather="trash-2" class="remove-item"></i>
-      </div>
-      <div class="cart-item">
-        <img src="img/product1.jpg" alt="product1">
-        <div class="item-detail">
-          <h3>Product 1</h3>
-          <div class="item-price">IDR 30K</div>
-        </div>
-        <i data-feather="trash-2" class="remove-item"></i>
-      </div>
+      </template>
     </div>
     <!-- shopping cart end -->
   </nav>
