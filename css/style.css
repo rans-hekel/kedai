@@ -183,6 +183,11 @@ font-weight: bold;
 font-size: 1.1rem;
 }
 
+.shopping-cart h4 {
+  font-size: 1.4rem;
+  margin-top: -1rem;
+  text-align: center;
+}
 
 
 
@@ -190,6 +195,60 @@ font-size: 1.1rem;
   height: 4rem;
   border-radius: 50%;
 }
+
+
+/* form checkout */
+.form-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-top: 1px dashed black;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+.form-container h5 {
+  text-align: center;
+  font-size: 1rem;
+}
+
+
+.form-container form {
+  width: 100%;
+  text-align: center;
+}
+
+.form-container label {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+
+.form-container span {
+  text-align: right;
+}
+
+.form-container input {
+  background-color: #ddd;
+  padding: 5px;
+  font-size: 1rem;
+  width: 70%;
+}
+
+.form-container .checkout-button {
+  padding: 6px 14px;
+  background-color: royalblue;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 20px;
+  margin:1rem auto;
+  cursor: pointer;
+}
+
+
 
 
 /* hero Section */
